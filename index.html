@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fishtype — your catch, typeset</title>
+<meta name="description" content="Fishtype turns a catch photo into a clean card with the fish name set in type. iPhone and Android.">
+<link rel="canonical" href="https://fishtype.app/">
+<style>
+  :root { --bg: #0F1011; --surface: #1A1B1D; --line: #2C2D30; --text: #F2F1EC; --muted: #8E9094; --accent: #D9F24A; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Noto Sans JP", sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.7;
+    -webkit-text-size-adjust: 100%; display: flex; flex-direction: column; min-height: 100vh;
+  }
+  main { flex-grow: 1; width: 100%; max-width: 640px; margin: 0 auto; padding: 88px 24px 48px; }
+  h1 { font-family: Georgia, "Times New Roman", serif; font-style: italic; font-size: 52px; font-weight: 600; letter-spacing: -0.01em; }
+  .badge { display: inline-block; margin-left: 10px; padding: 2px 9px; border-radius: 6px; background: var(--accent); color: #141600;
+           font: 700 14px/1.6 ui-monospace, "SF Mono", Menlo, monospace; letter-spacing: 0.06em; vertical-align: middle; }
+  .tagline { font-size: 19px; margin-top: 14px; }
+  .ja { color: var(--muted); font-size: 15px; margin-top: 4px; }
+  .soon { margin-top: 40px; padding: 18px 20px; border: 1.5px solid var(--line); border-radius: 14px; background: var(--surface); font-size: 15px; }
+  footer { width: 100%; max-width: 640px; margin: 0 auto; padding: 24px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Fishtype<span class="badge">APP</span></h1>
+  <p class="tagline">Your catch, typeset. Pick a photo — Fishtype names the fish and sets it in type.</p>
+  <p class="ja">釣った魚の写真に、魚種名をタイポグラフィで。</p>
+  <p class="soon">Coming soon to the App Store and Google Play.<br><span class="ja">App Store・Google Play で近日公開。</span></p>
+</main>
+<footer>
+  Contact / お問い合わせ: <a href="mailto:info@fishtype.app">info@fishtype.app</a>
+</footer>
+</body>
+</html>
