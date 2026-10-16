@@ -45,7 +45,7 @@
 <h2 id="section-2">2. Fish identification (AI)</h2>
 <ul>
 <li><strong>When:</strong> only after you agree in the app, and only for the photo you are working on. If you choose "Not now", nothing is sent</li>
-<li><strong>What is sent:</strong> a copy of your photo, redrawn as a JPEG of up to 1024 pixels on the long side. The copy carries no metadata (no date, place or camera data); our server rejects photos that still carry it. If your device region is Japan, a hint that the fish was caught in Japan is added. Your device's location is never used</li>
+<li><strong>What is sent:</strong> a copy of your photo, redrawn as a JPEG of up to 1024 pixels on the long side. The app redraws the photo, so the copy carries no metadata (no date, place or camera data), and our server also rejects photos that still carry camera (Exif) data. If your device region is Japan, a hint that the fish was caught in Japan is added. Your device's location is never used</li>
 <li><strong>Where it goes:</strong> to our server (Supabase, Tokyo region), which forwards the photo to <strong>Anthropic, PBC (USA)</strong> for identification. Only if Anthropic is busy or fails do we send it to <strong>OpenAI, L.L.C. (USA)</strong> instead. The AI companies receive the photo and our instructions only, not your device ID</li>
 <li><strong>Storage:</strong> our server does not store your photo. Anthropic and OpenAI do not use API data to train their models by default, and delete it within 30 days (they may keep it longer if it is flagged for a policy violation). See <a href="https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data">Anthropic's data retention</a> and <a href="https://developers.openai.com/api/docs/guides/your-data">OpenAI's API data controls</a></li>
 <li><strong>Results:</strong> the AI's suggested fish names are returned to the app and shown to you. AI results can be wrong</li>
@@ -60,7 +60,7 @@
 <li><strong>Purchase check attempts</strong> (to prevent abuse). Deleted after 1 day</li>
 <li><strong>Rewarded ad confirmations:</strong> AdMob's transaction ID, a one-time code made for each ad, and the ad unit. Deleted after 90 days</li>
 </ul>
-<p>Our server logs keep only the first 8 characters of the device ID, the result and the time taken. Photos, AI answers, purchase tokens and keys are never logged.</p>
+<p>Our application logs record only the first 8 characters of the device ID and technical details such as the result, the plan, the product, the AI used and the time taken. Photos, AI answers, purchase tokens and keys are never logged. Our hosting provider (Supabase) also keeps standard request logs, which can include the request address (for the ad confirmation from AdMob, this includes the device ID) and the IP address, for a limited period set by the provider.</p>
 <h2 id="section-4">4. Purchases (Fishtype Pro)</h2>
 <p>Payments are handled by Apple (App Store) or Google (Google Play). We never receive your card or payment details. To confirm a purchase, the app sends the store's transaction information to our server, which checks it with Apple's or Google's servers and keeps the purchase status described in section 3.</p>
 <h2 id="section-5">5. Ads (Google AdMob)</h2>
@@ -78,9 +78,10 @@
 <li><strong>Tracking (iOS):</strong> asked once for ads, as described in section 5</li>
 <li><strong>Internet:</strong> for fish identification, purchase checks and ads</li>
 </ul>
+<p>On Android, the libraries for purchases and ads also add the permissions they need to work: billing, the advertising ID and Android's ad services, network state, keeping the device awake briefly, and running a short background task.</p>
 <p>Fishtype does not use location, contacts, the microphone or any other permission.</p>
 <h2 id="section-7">7. Sharing with others</h2>
-<p>We do not sell your data. We share it only with the service providers named in this policy (Supabase, Anthropic, OpenAI, Apple, Google), and only to provide the features described. We may disclose information if required by law.</p>
+<p>We do not sell your data. We share it only with the service providers named in this policy (Supabase, Anthropic, OpenAI, Apple, Google, and Cloudflare for email forwarding), and only to provide the features described. We may disclose information if required by law.</p>
 <h2 id="section-8">8. Children</h2>
 <p>Fishtype is not directed at children under 13, and we do not knowingly collect information from them.</p>
 <h2 id="section-9">9. Your choices and deleting your data</h2>
@@ -89,9 +90,11 @@
 <li>You can delete everything on your device by deleting the app (on iOS, the device ID stays in the keychain)</li>
 <li><strong>To delete the data on our server</strong>, email us at <a href="mailto:info@fishtype.app">info@fishtype.app</a> with the Support ID shown in Settings (Settings &gt; Contact adds it to the email for you). We will delete the data linked to that device ID within 14 days. Deleting it also resets your free identification count and purchase status on our server; restore your purchase in the app to use Fishtype Pro again</li>
 </ul>
-<h2 id="section-10">10. Changes</h2>
+<h2 id="section-10">10. When you contact us</h2>
+<p>If you email us (including from Settings &gt; Contact), we receive your email address, your message and anything you include, such as the Support ID, app version and OS that the app adds to the email. Email to <a href="mailto:info@fishtype.app">info@fishtype.app</a> is forwarded to our mailbox through Cloudflare and Google (Gmail). We use it only to answer you and handle your request, and keep it only as long as needed for that.</p>
+<h2 id="section-11">11. Changes</h2>
 <p>We will post any changes to this policy on this page. If a change is significant, we will also let you know in the app.</p>
-<h2 id="section-11">11. Contact</h2>
+<h2 id="section-12">12. Contact</h2>
 <ul>
 <li>Operator: MTP Works</li>
 <li>Email: <a href="mailto:info@fishtype.app">info@fishtype.app</a></li>
