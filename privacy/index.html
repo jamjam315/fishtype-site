@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fishtype Privacy Policy</title>
+<link rel="canonical" href="https://fishtype.app/privacy/">
+<style>
+  :root { --bg: #0F1011; --surface: #1A1B1D; --line: #2C2D30; --text: #F2F1EC; --muted: #8E9094; --accent: #D9F24A; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Noto Sans JP", sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.8; -webkit-text-size-adjust: 100%;
+  }
+  main { max-width: 720px; margin: 0 auto; padding: 56px 24px 48px; }
+  .home { font-family: Georgia, "Times New Roman", serif; font-style: italic; font-size: 22px; color: var(--text); text-decoration: none; }
+  h1 { font-size: 28px; line-height: 1.4; margin: 28px 0 6px; }
+  h2 { font-size: 19px; margin: 36px 0 10px; padding-top: 18px; border-top: 1px solid var(--line); }
+  h3 { font-size: 16px; margin: 22px 0 8px; }
+  p { margin: 10px 0; }
+  .meta { color: var(--muted); font-size: 14px; }
+  ul { margin: 10px 0 10px 1.3em; }
+  li { margin: 6px 0; }
+  a { color: var(--accent); }
+  code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.92em; background: var(--surface); padding: 1px 5px; border-radius: 4px; }
+  footer { max-width: 720px; margin: 0 auto; padding: 24px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+<a class="home" href="/">Fishtype</a>
+<h1>Fishtype Privacy Policy</h1>
+<p class="meta">Effective: October 16, 2026</p>
+<p>Fishtype ("the app") is provided by MTP Works ("we", "us"). Fishtype turns a photo of your catch into a card with the fish name set in type. We collect as little as we can: there are no accounts, no location, and no analytics.</p>
+<h2 id="section-1">1. What stays on your device</h2>
+<p>The following are kept only on your device and are never sent to us or anyone else:</p>
+<ul>
+<li>Your photos and the finished images you make (the app keeps up to 30 recent finished images in its own storage)</li>
+<li>Your settings (name style, language) and whether you agreed to AI identification</li>
+<li>The names the AI suggested for each photo you identified, stored with a fingerprint (SHA-256) of the photo file so the same photo is not identified twice. The photo itself is not stored</li>
+<li>Your Fishtype Pro status and the number of free identifications left</li>
+</ul>
+<p>Sharing or saving a finished image happens only when you tap Share or Save.</p>
+<h2 id="section-2">2. Fish identification (AI)</h2>
+<ul>
+<li><strong>When:</strong> only after you agree in the app, and only for the photo you are working on. If you choose "Not now", nothing is sent</li>
+<li><strong>What is sent:</strong> a copy of your photo, redrawn as a JPEG of up to 1024 pixels on the long side. The copy carries no metadata (no date, place or camera data); our server rejects photos that still carry it. If your device region is Japan, a hint that the fish was caught in Japan is added. Your device's location is never used</li>
+<li><strong>Where it goes:</strong> to our server (Supabase, Tokyo region), which forwards the photo to <strong>Anthropic, PBC (USA)</strong> for identification. Only if Anthropic is busy or fails do we send it to <strong>OpenAI, L.L.C. (USA)</strong> instead. The AI companies receive the photo and our instructions only, not your device ID</li>
+<li><strong>Storage:</strong> our server does not store your photo. Anthropic and OpenAI do not use API data to train their models by default, and delete it within 30 days (they may keep it longer if it is flagged for a policy violation). See <a href="https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data">Anthropic's data retention</a> and <a href="https://developers.openai.com/api/docs/guides/your-data">OpenAI's API data controls</a></li>
+<li><strong>Results:</strong> the AI's suggested fish names are returned to the app and shown to you. AI results can be wrong</li>
+</ul>
+<h2 id="section-3">3. What our server keeps</h2>
+<p>To count free identifications and check purchases, the app creates a random device ID (32 hexadecimal characters) on your device. It is not linked to your name, email address or phone number. On iOS it is kept in the device keychain so that reinstalling the app does not reset your free identifications.</p>
+<p>Our server keeps, for each device ID:</p>
+<ul>
+<li><strong>Free identifications used</strong> (including those added by watching ads). Kept so that the free trial cannot be reset, until you ask us to delete it</li>
+<li><strong>Fishtype Pro identifications per day</strong> (up to 30 a day). Deleted automatically after 30 days</li>
+<li><strong>Purchase status:</strong> a purchase key (Apple's transaction ID, or a SHA-256 hash of the Google Play purchase token), the product, the expiry date, whether it was a test purchase, and when we last checked it. Deleted automatically 90 days after the purchase expires</li>
+<li><strong>Purchase check attempts</strong> (to prevent abuse). Deleted after 1 day</li>
+<li><strong>Rewarded ad confirmations:</strong> AdMob's transaction ID, a one-time code made for each ad, and the ad unit. Deleted after 90 days</li>
+</ul>
+<p>Our server logs keep only the first 8 characters of the device ID, the result and the time taken. Photos, AI answers, purchase tokens and keys are never logged.</p>
+<h2 id="section-4">4. Purchases (Fishtype Pro)</h2>
+<p>Payments are handled by Apple (App Store) or Google (Google Play). We never receive your card or payment details. To confirm a purchase, the app sends the store's transaction information to our server, which checks it with Apple's or Google's servers and keeps the purchase status described in section 3.</p>
+<h2 id="section-5">5. Ads (Google AdMob)</h2>
+<ul>
+<li>Free users can choose to watch a short video ad to get one more identification. Ads appear only when you tap "Watch an ad for 1 more photo". There are no banner or interstitial ads, and no ads while you have Fishtype Pro</li>
+<li>Ads are provided by <strong>Google AdMob (Google LLC)</strong>. The AdMob SDK collects information such as an advertising identifier, device information, IP address and ad interactions for ad delivery, measurement and fraud prevention. See <a href="https://policies.google.com/technologies/partner-sites">how Google uses information from apps that use its services</a></li>
+<li><strong>Advertising identifier:</strong> on iOS, the app asks once whether you allow tracking. If you do not, the advertising identifier (IDFA) is not used and ads are not personalized based on tracking. On Android, the advertising ID is used; you can reset it or opt out of personalized ads in your device settings</li>
+<li><strong>Europe, UK and Switzerland:</strong> Google's consent form is shown first. You can change your choice at any time in Settings &gt; Ad privacy choices</li>
+<li><strong>Reward confirmation:</strong> to make sure the reward is real, the app gives AdMob your device ID and a one-time code for each ad. AdMob sends them back to our server when you finish the ad. Advertisers do not receive them</li>
+</ul>
+<h2 id="section-6">6. Permissions</h2>
+<ul>
+<li><strong>Camera:</strong> to take a photo of your catch</li>
+<li><strong>Photos:</strong> to open the photo you choose, and to save your finished image (on Android 10 and earlier, a storage permission is used for saving)</li>
+<li><strong>Tracking (iOS):</strong> asked once for ads, as described in section 5</li>
+<li><strong>Internet:</strong> for fish identification, purchase checks and ads</li>
+</ul>
+<p>Fishtype does not use location, contacts, the microphone or any other permission.</p>
+<h2 id="section-7">7. Sharing with others</h2>
+<p>We do not sell your data. We share it only with the service providers named in this policy (Supabase, Anthropic, OpenAI, Apple, Google), and only to provide the features described. We may disclose information if required by law.</p>
+<h2 id="section-8">8. Children</h2>
+<p>Fishtype is not directed at children under 13, and we do not knowingly collect information from them.</p>
+<h2 id="section-9">9. Your choices and deleting your data</h2>
+<ul>
+<li>You can use Fishtype without AI identification (choose "Not now" and type the fish name yourself)</li>
+<li>You can delete everything on your device by deleting the app (on iOS, the device ID stays in the keychain)</li>
+<li><strong>To delete the data on our server</strong>, email us at <a href="mailto:info@fishtype.app">info@fishtype.app</a> with the Support ID shown in Settings (Settings &gt; Contact adds it to the email for you). We will delete the data linked to that device ID within 14 days. Deleting it also resets your free identification count and purchase status on our server; restore your purchase in the app to use Fishtype Pro again</li>
+</ul>
+<h2 id="section-10">10. Changes</h2>
+<p>We will post any changes to this policy on this page. If a change is significant, we will also let you know in the app.</p>
+<h2 id="section-11">11. Contact</h2>
+<ul>
+<li>Operator: MTP Works</li>
+<li>Email: <a href="mailto:info@fishtype.app">info@fishtype.app</a></li>
+<li>Japanese version: <a href="https://fishtype.app/ja/privacy/">プライバシーポリシー（日本語）</a></li>
+</ul>
+</main>
+<footer>
+<a href="/">Home</a> · <a href="mailto:info@fishtype.app">info@fishtype.app</a>
+</footer>
+</body>
+</html>

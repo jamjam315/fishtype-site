@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fishtype プライバシーポリシー</title>
+<link rel="canonical" href="https://fishtype.app/ja/privacy/">
+<style>
+  :root { --bg: #0F1011; --surface: #1A1B1D; --line: #2C2D30; --text: #F2F1EC; --muted: #8E9094; --accent: #D9F24A; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Hiragino Sans", "Noto Sans JP", sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.8; -webkit-text-size-adjust: 100%;
+  }
+  main { max-width: 720px; margin: 0 auto; padding: 56px 24px 48px; }
+  .home { font-family: Georgia, "Times New Roman", serif; font-style: italic; font-size: 22px; color: var(--text); text-decoration: none; }
+  h1 { font-size: 28px; line-height: 1.4; margin: 28px 0 6px; }
+  h2 { font-size: 19px; margin: 36px 0 10px; padding-top: 18px; border-top: 1px solid var(--line); }
+  h3 { font-size: 16px; margin: 22px 0 8px; }
+  p { margin: 10px 0; }
+  .meta { color: var(--muted); font-size: 14px; }
+  ul { margin: 10px 0 10px 1.3em; }
+  li { margin: 6px 0; }
+  a { color: var(--accent); }
+  code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.92em; background: var(--surface); padding: 1px 5px; border-radius: 4px; }
+  footer { max-width: 720px; margin: 0 auto; padding: 24px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+<a class="home" href="/">Fishtype</a>
+<h1>Fishtype プライバシーポリシー</h1>
+<p class="meta">制定日：2026年10月16日</p>
+<p>「Fishtype」（以下「本アプリ」）は、MTP Works（以下「当方」）が提供する、釣った魚の写真に魚種名をタイポグラフィで乗せるアプリです。集める情報はできるだけ少なくしています。アカウント・位置情報・アクセス解析はありません。</p>
+<h2 id="section-1">1. 端末の中だけに残るもの</h2>
+<p>次のものは、お使いの端末の中だけに保存され、当方を含む外部に送信されることはありません。</p>
+<ul>
+<li>写真と、作った仕上がりの画像（最近の仕上がりは、アプリの領域に30枚まで残します）</li>
+<li>設定（魚種名の表記・言語）と、AI の判定に同意したかどうか</li>
+<li>判定した写真ごとの、AI が出した魚種名の候補。同じ写真を判定し直さないため、写真のファイルの指紋（SHA-256）と一緒に保存します。写真そのものは保存しません</li>
+<li>Fishtype Pro の状態と、無料で判定できる残りの枚数</li>
+</ul>
+<p>仕上がりの共有・保存は、あなたが「共有」「保存」を押したときだけ行います。</p>
+<h2 id="section-2">2. 魚種の判定（AI）</h2>
+<ul>
+<li><strong>送るとき</strong>: アプリで同意をいただいた後、作業中の写真についてだけ送ります。「今はしない」を選んだ場合は送りません</li>
+<li><strong>送るもの</strong>: 写真を長い辺 1024 ピクセルまでの JPEG に描き直した写しです。写しには撮影日時・場所・カメラなどの撮影データは付きません（当方のサーバーは、撮影データが残った写真を受け付けません）。端末の地域が日本のときは「日本で釣った魚」という手がかりを添えます。端末の位置情報は使いません</li>
+<li><strong>送り先</strong>: 当方のサーバー（Supabase・東京リージョン）を通して、<strong>Anthropic, PBC（米国）</strong>に送り、判定します。Anthropic が混雑・失敗したときだけ、代わりに <strong>OpenAI, L.L.C.（米国）</strong>に送ります。AI の会社が受け取るのは写真と当方の指示文だけで、端末ID は送りません</li>
+<li><strong>保存</strong>: 当方のサーバーは写真を保存しません。Anthropic・OpenAI は、API で受け取ったデータを、初期設定ではモデルの学習に使わず、30日以内に削除すると定めています（規約違反の疑いがある場合は、より長く保存されることがあります）。詳しくは <a href="https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data">Anthropic のデータの保存期間</a>・<a href="https://developers.openai.com/api/docs/guides/your-data">OpenAI の API のデータの扱い</a>をご覧ください</li>
+<li><strong>結果</strong>: AI が出した魚種名の候補をアプリに返して表示します。AI の結果は間違うことがあります</li>
+</ul>
+<h2 id="section-3">3. 当方のサーバーに残すもの</h2>
+<p>無料の判定の枚数を数え、購入を確かめるため、アプリは端末の中でランダムな端末ID（16進32桁）を作ります。端末ID は、氏名・メールアドレス・電話番号とは結び付いていません。iOS では、アプリを入れ直しても無料の枚数が戻らないよう、端末のキーチェーンに保存します。</p>
+<p>当方のサーバーには、端末ID ごとに次のものを保存します。</p>
+<ul>
+<li><strong>無料の判定に使った枚数</strong>（広告を見て足した分を含む）: 無料のお試しを取り直せないよう、削除のご依頼をいただくまで保存します</li>
+<li><strong>Fishtype Pro の日ごとの判定の枚数</strong>（1日30枚まで）: 30日で自動的に削除します</li>
+<li><strong>購入の状態</strong>: 購入の鍵（Apple の取引の番号、または Google Play の購入トークンを SHA-256 で変換したもの）・商品・有効期限・テストの購入かどうか・最後に確かめた日時。期限が切れてから90日で自動的に削除します</li>
+<li><strong>購入の確認を試した記録</strong>（不正の防止のため）: 1日で削除します</li>
+<li><strong>リワード広告の確認の記録</strong>: AdMob の取引の番号・広告ごとに作る使い捨ての合言葉・広告の枠。90日で削除します</li>
+</ul>
+<p>当方のサーバーの動作の記録（ログ）には、端末ID の先頭8文字・結果・かかった時間だけを残します。写真・AI の答え・購入トークン・鍵は記録しません。</p>
+<h2 id="section-4">4. 購入（Fishtype Pro）</h2>
+<p>支払いは Apple（App Store）または Google（Google Play）が行います。当方がカードなどの支払いの情報を受け取ることはありません。購入を確かめるため、アプリはストアの取引の情報を当方のサーバーに送り、サーバーが Apple・Google のサーバーに確かめて、第3条の購入の状態を保存します。</p>
+<h2 id="section-5">5. 広告（Google AdMob）</h2>
+<ul>
+<li>無料でお使いの方は、短い動画の広告を見て、判定を1枚足すことができます。広告が出るのは「広告を見て1枚判定」を押したときだけです。バナー広告・全画面の広告はありません。Fishtype Pro の間は広告を出しません</li>
+<li>広告は <strong>Google AdMob（Google LLC）</strong>が配信します。AdMob の SDK は、広告の配信・効果の計測・不正の防止のため、広告の識別子・端末の情報・IP アドレス・広告の操作などの情報を集めます。詳しくは <a href="https://policies.google.com/technologies/partner-sites?hl=ja">Google のサービスを使うアプリでの Google の情報の使い方</a>をご覧ください</li>
+<li><strong>広告の識別子</strong>: iOS では、追跡を許可するかを一度だけお聞きします。許可しない場合、広告の識別子（IDFA）は使われず、追跡に基づく広告の最適化は行われません。Android では広告 ID が使われます。端末の設定で、広告 ID のリセットや、パーソナライズされた広告の停止ができます</li>
+<li><strong>欧州経済領域・英国・スイス</strong>: 先に Google の同意の画面を表示します。設定の「広告のプライバシーの選択」から、いつでも選び直せます</li>
+<li><strong>報酬の確認</strong>: 報酬が正しいことを確かめるため、アプリは端末ID と、広告ごとに作る使い捨ての合言葉を AdMob に渡します。広告を見終わると、AdMob がこれを当方のサーバーに送ってきます。広告主には渡りません</li>
+</ul>
+<h2 id="section-6">6. アプリが使う権限</h2>
+<ul>
+<li><strong>カメラ</strong>: 釣った魚の写真を撮るため</li>
+<li><strong>写真</strong>: 選んだ写真を開くため、と仕上がりを保存するため（Android 10 以前では、保存に端末の保存領域の権限を使います）</li>
+<li><strong>トラッキング（iOS）</strong>: 第5条のとおり、広告のために一度だけお聞きします</li>
+<li><strong>インターネット</strong>: 魚種の判定・購入の確認・広告のため</li>
+</ul>
+<p>位置情報・連絡先・マイクなど、ほかの権限は使いません。</p>
+<h2 id="section-7">7. 第三者への提供</h2>
+<p>当方は、あなたの情報を販売しません。本ポリシーに書いたサービスの事業者（Supabase・Anthropic・OpenAI・Apple・Google）に、書いた機能の提供のためにだけ渡します。法令にもとづく開示を求められた場合は、これに応じることがあります。</p>
+<h2 id="section-8">8. お子さまについて</h2>
+<p>本アプリは13歳未満のお子さまを対象としていません。13歳未満のお子さまの情報を、それと知りながら集めることはありません。</p>
+<h2 id="section-9">9. 選べること・データの削除</h2>
+<ul>
+<li>AI の判定を使わずに本アプリを使えます（「今はしない」を選び、魚種名を自分で入力できます）</li>
+<li>本アプリを削除すると、端末の中のものはすべて消えます（iOS では、端末ID はキーチェーンに残ります）</li>
+<li><strong>当方のサーバーのデータの削除</strong>: 設定に表示される「サポート用の ID」を添えて、<a href="mailto:info@fishtype.app">info@fishtype.app</a> までご連絡ください（設定の「お問い合わせ」から送ると、ID がメールに入ります）。ご連絡から14日以内に、その端末ID のデータを削除します。削除すると、当方のサーバーの無料の判定の枚数と購入の状態も消えます。Fishtype Pro をお使いの場合は、アプリで「購入を復元」してください</li>
+</ul>
+<h2 id="section-10">10. ポリシーの改定</h2>
+<p>本ポリシーを改定する場合は、本ページで公表します。重要な変更がある場合は、アプリの中でもお知らせします。</p>
+<h2 id="section-11">11. お問い合わせ</h2>
+<ul>
+<li>事業者：MTP Works</li>
+<li>メール：<a href="mailto:info@fishtype.app">info@fishtype.app</a></li>
+<li>English: <a href="https://fishtype.app/privacy/">Privacy Policy (English)</a></li>
+</ul>
+</main>
+<footer>
+<a href="/">トップ</a> · <a href="mailto:info@fishtype.app">info@fishtype.app</a>
+</footer>
+</body>
+</html>
