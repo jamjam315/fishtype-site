@@ -8,7 +8,7 @@ GitHub Pages で <https://fishtype.app/> に公開している。
 | トップ | `index.html` |
 | 利用規約 | `terms/`（英語）・`ja/terms/`（日本語） |
 | プライバシーポリシー | `privacy/`（英語）・`ja/privacy/`（日本語） |
-| サポート | `support/`（英語）・`ja/support/`（日本語）。App Store の「サポート URL」（10/21） |
+| サポート | `support/`（英語）・`ja/support/`（日本語）。App Store の「サポート URL」（10/20） |
 | app-ads.txt | `app-ads.txt`（AdMob の発行者 ID。10/16。AdMob の「アプリ → app-ads.txt を表示」の1行と同じ） |
 
 - 原稿の正本はアプリのリポジトリ（`jamjam315/fishtype` の `docs/legal/*.md`）。ここは公開用の写しで、`python3 -I tool/build_legal.py ../fishtype-site`（fishtype のリポジトリで実行）で作る。**ここの HTML を直接直さない**
