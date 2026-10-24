@@ -31,24 +31,39 @@
 <main>
 <a class="home" href="/">Fishtype</a>
 <h1>Fishtype Privacy Policy</h1>
-<p class="meta">Effective: October 16, 2026 · Last updated: October 21, 2026</p>
-<p>Fishtype ("the app") is provided by MTP Works ("we", "us"). Fishtype turns a photo of your catch into a card with the fish name set in type. We collect as little as we can: there are no accounts, no location, and no analytics.</p>
+<p class="meta">Effective: October 16, 2026 · Last updated: October 24, 2026</p>
+<p>Fishtype ("the app") is provided by MTP Works ("we", "us"). Fishtype turns a photo of your catch into a card with the fish name set in type. We collect as little as we can: there are no accounts and no analytics, and Fishtype never uses your device's current location.</p>
 <h2 id="section-1">1. What stays on your device</h2>
 <p>The following are kept only on your device and are never sent to us or anyone else:</p>
 <ul>
 <li>Your photos and the finished images you make (the app keeps up to 30 recent finished images in its own storage)</li>
-<li>Your settings (name style, language) and whether you agreed to AI identification</li>
+<li>Your settings (name style, language, your seal, whether and how to hide faces, the map and its style, and so on) and whether you agreed to AI identification</li>
 <li>The names the AI suggested for each photo you identified, stored with a fingerprint (SHA-256) of the photo file so the same photo is not identified twice. The photo itself is not stored</li>
 <li>Your Fishtype Pro status and the number of free identifications left</li>
 </ul>
-<p>Sharing or saving a finished image happens only when you tap Share or Save.</p>
-<h2 id="section-2">2. Fish identification (AI)</h2>
+<p>Sharing or saving a finished image happens only when you tap Share or Save. Finished images carry no metadata such as the date or place.</p>
+<p>The following processing happens only on your device. The results are never sent anywhere; they are kept only while you work on the photo and are not saved.</p>
+<ul>
+<li><strong>Face detection:</strong> Apple's Vision on your device finds people's faces in the photo. This is used to hide faces on the photo (Settings &gt; Hide faces, off by default), to blur faces before a photo is sent for AI identification (section 2), and to keep the text off faces. Face information is never used for advertising or marketing</li>
+<li><strong>Fish cutout:</strong> for SPOTLIGHT (black-and-white background with the fish in color) and "Text behind fish", Apple's Vision on your device cuts out the main subject of the photo (the fish, or the person and the fish)</li>
+<li><strong>Rough area from the photo's location:</strong> only when you turn on the map in Settings (off by default), the app reads the location in the photo's metadata and, using boundary data built into the app, rounds it to a prefecture, state or country (or the sea off it). The exact coordinates are discarded right away and are never saved or sent, not even to a geocoding service. The area name and line map are only drawn on your finished image. Your device's current location is never used</li>
+</ul>
+<h2 id="section-2">2. AI features (fish identification and note translation)</h2>
+<h3>Fish identification</h3>
 <ul>
 <li><strong>When:</strong> only after you agree in the app, and only for the photo you are working on. If you choose "Not now", nothing is sent</li>
-<li><strong>What is sent:</strong> a copy of your photo, redrawn as a JPEG of up to 1024 pixels on the long side. The app redraws the photo, so the copy carries no metadata (no date, place or camera data), and our server also rejects photos that still carry camera (Exif) data. If your device region is Japan, a hint that the fish was caught in Japan is added. Your device's location is never used</li>
+<li><strong>What is sent:</strong> a copy of your photo, redrawn as a JPEG of up to 1024 pixels on the long side. The app redraws the photo, so the copy carries no metadata (no date, place or camera data), and our server also rejects photos that still carry camera (Exif) data. People's faces in the photo are always blurred before it is sent, whatever the Hide faces setting. If your device region is Japan, a hint that the fish was caught in Japan is added. The photo's location and your device's location are never sent</li>
 <li><strong>Where it goes:</strong> to our server (Supabase, Tokyo region), which forwards the photo to <strong>Anthropic, PBC (USA)</strong> for identification. Only if Anthropic is busy or fails do we send it to <strong>OpenAI, L.L.C. (USA)</strong> instead. The AI companies receive the photo and our instructions only, not your device ID</li>
 <li><strong>Storage:</strong> our server does not store your photo. Anthropic and OpenAI do not use API data to train their models by default, and delete it within 30 days (they may keep it longer if it is flagged for a policy violation). See <a href="https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data">Anthropic's data retention</a> and <a href="https://developers.openai.com/api/docs/guides/your-data">OpenAI's API data controls</a></li>
 <li><strong>Results:</strong> the AI's suggested fish names are returned to the app and shown to you. AI results can be wrong</li>
+</ul>
+<h3>Note translation (Fishtype Pro)</h3>
+<ul>
+<li><strong>When:</strong> only when you tap "To English" or "To Japanese" under the "Method or spot" field in Info</li>
+<li><strong>What is sent:</strong> only the text in that field (up to 60 characters) and the language to translate into. No photo and no location</li>
+<li><strong>Where it goes:</strong> to our server (Supabase, Tokyo region), which forwards it to <strong>Anthropic, PBC (USA)</strong> for translation. The AI company receives the text and our instructions only, not your device ID</li>
+<li><strong>Storage:</strong> our server stores neither the text nor the translation. Anthropic handles it as for fish identification (not used to train models by default, and deleted within 30 days)</li>
+<li><strong>Results:</strong> the translation is only put into the field, where you can edit it or go back to your original text. AI translations can be wrong</li>
 </ul>
 <h2 id="section-3">3. What our server keeps</h2>
 <p>To count free identifications and check purchases, the app creates a random device ID (32 hexadecimal characters) on your device. It is not linked to your name, email address or phone number. On iOS it is kept in the device keychain so that reinstalling the app does not reset your free identifications.</p>
@@ -56,11 +71,12 @@
 <ul>
 <li><strong>Free identifications used</strong> (including those added by watching ads). Kept so that the free trial cannot be reset, until you ask us to delete it</li>
 <li><strong>Fishtype Pro identifications per day</strong> (up to 20 a day). Deleted automatically after 30 days</li>
+<li><strong>Note translations per day</strong> (up to 50). Deleted automatically after 30 days</li>
 <li><strong>Purchase status:</strong> a purchase key (Apple's transaction ID, or a SHA-256 hash of the Google Play purchase token), the product, the expiry date, whether it was a test purchase, and when we last checked it. Deleted automatically 90 days after the purchase expires</li>
 <li><strong>Purchase check attempts</strong> (to prevent abuse). Deleted after 1 day</li>
 <li><strong>Rewarded ad confirmations:</strong> AdMob's transaction ID, a one-time code made for each ad, and the ad unit. Deleted after 90 days</li>
 </ul>
-<p>Our application logs record only the first 8 characters of the device ID and technical details such as the result, the plan, the product, the AI used and the time taken. Photos, AI answers, purchase tokens and keys are never logged. Our hosting provider (Supabase) also keeps standard request logs, which can include the request address (for the ad confirmation from AdMob, this includes the device ID) and the IP address, for a limited period set by the provider.</p>
+<p>Our application logs record only the first 8 characters of the device ID and technical details such as the result, the plan, the product, the AI used and the time taken. Photos, AI answers, the text and translations of notes, purchase tokens and keys are never logged (for translations, only the length of the text is logged). Our hosting provider (Supabase) also keeps standard request logs, which can include the request address (for the ad confirmation from AdMob, this includes the device ID) and the IP address, for a limited period set by the provider.</p>
 <h2 id="section-4">4. Purchases (Fishtype Pro)</h2>
 <p>Payments are handled by Apple (App Store) or Google (Google Play). We never receive your card or payment details. To confirm a purchase, the app sends the store's transaction information to our server, which checks it with Apple's or Google's servers and keeps the purchase status described in section 3.</p>
 <p>When a purchase is refunded, revoked, renewed or expires, Apple notifies our server. Our server then checks the purchase with Apple again and updates the purchase status in section 3 (a refunded or revoked purchase stops Fishtype Pro right away). The app may also ask our server whether Fishtype Pro is active on your device; it sends only the device ID for this.</p>
@@ -75,12 +91,12 @@
 <h2 id="section-6">6. Permissions</h2>
 <ul>
 <li><strong>Camera:</strong> to take a photo of your catch</li>
-<li><strong>Photos:</strong> to open the photo you choose, and to save your finished image (on Android 10 and earlier, a storage permission is used for saving)</li>
+<li><strong>Photos:</strong> to open the photo you choose (and, when the map is on, to work out a rough area from that photo's location, as in section 1), and to save your finished image (on Android 10 and earlier, a storage permission is used for saving)</li>
 <li><strong>Tracking (iOS):</strong> asked once for ads, as described in section 5</li>
-<li><strong>Internet:</strong> for fish identification, purchase checks and ads</li>
+<li><strong>Internet:</strong> for fish identification, note translation, purchase checks and ads</li>
 </ul>
 <p>On Android, the libraries for purchases and ads also add the permissions they need to work: billing, the advertising ID and Android's ad services, network state, keeping the device awake briefly, and running a short background task.</p>
-<p>Fishtype does not use location, contacts, the microphone or any other permission.</p>
+<p>Fishtype does not use your device's location (current location), contacts, the microphone or any other permission.</p>
 <h2 id="section-7">7. Sharing with others</h2>
 <p>We do not sell your data. We share it only with the service providers named in this policy (Supabase, Anthropic, OpenAI, Apple, Google, and Cloudflare for email forwarding), and only to provide the features described. We may disclose information if required by law.</p>
 <h2 id="section-8">8. Children</h2>
@@ -88,6 +104,7 @@
 <h2 id="section-9">9. Your choices and deleting your data</h2>
 <ul>
 <li>You can use Fishtype without AI identification (choose "Not now" and type the fish name yourself)</li>
+<li>You can use Fishtype without the map (the rough area from the photo's location), Hide faces or note translation. The map and Hide faces are off by default</li>
 <li>You can delete everything on your device by deleting the app (on iOS, the device ID stays in the keychain)</li>
 <li><strong>To delete the data on our server</strong>, email us at <a href="mailto:info@fishtype.app">info@fishtype.app</a> with the Support ID shown in Settings (Settings &gt; Contact adds it to the email for you). We will delete the data linked to that device ID within 14 days. Deleting it also resets your free identification count and purchase status on our server; restore your purchase in the app to use Fishtype Pro again</li>
 </ul>
