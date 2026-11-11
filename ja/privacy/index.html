@@ -31,7 +31,7 @@
 <main>
 <a class="home" href="/">Fishtype</a>
 <h1>Fishtype プライバシーポリシー</h1>
-<p class="meta">制定日：2026年10月16日・最終改定：2026年11月7日</p>
+<p class="meta">制定日：2026年10月16日・最終改定：2026年11月11日</p>
 <p>「Fishtype」（以下「本アプリ」）は、MTP Works（以下「当方」）が提供する、釣った魚の写真に魚種名をタイポグラフィで乗せるアプリです。集める情報はできるだけ少なくしています。アカウントはなく、当方がアクセス解析をすることもありません。端末の現在地も使いません。</p>
 <h2 id="section-1">1. 端末の中だけに残るもの</h2>
 <p>次のものは、お使いの端末の中だけに保存され、当方を含む外部に送信されることはありません。</p>
@@ -54,7 +54,7 @@
 <ul>
 <li><strong>送るとき</strong>: アプリで同意をいただいた後、作業中の写真についてだけ送ります。「今はしない」を選んだ場合は送りません</li>
 <li><strong>送るもの</strong>: 写真を長い辺 1024 ピクセルまでの JPEG に描き直した写しです。アプリが写真を描き直すので、写しには撮影日時・場所・カメラなどの撮影データは付きません。当方のサーバーも、撮影データ（Exif）が残った写真は受け付けません。写っている人の顔は、設定の「顔を隠す」に関わらず、送る前に必ずぼかします。端末の地域が日本のときは「日本で釣った魚」という手がかりを添えます。撮影場所や端末の現在地は送りません</li>
-<li><strong>送り先</strong>: 当方のサーバー（Supabase・東京リージョン）を通して、<strong>Anthropic, PBC（米国）</strong>に送り、判定します。Anthropic が混雑・失敗したときだけ、代わりに <strong>OpenAI, L.L.C.（米国）</strong>に送ります。AI の会社が受け取るのは写真と当方の指示文だけで、端末ID は送りません</li>
+<li><strong>送り先</strong>: 当方のサーバー（Supabase Pte. Ltd.・東京リージョン）を通して、<strong>Anthropic, PBC（米国）</strong>に送り、判定します。Anthropic が混雑・失敗したときだけ、代わりに <strong>OpenAI OpCo, LLC（米国）</strong>に送ります。AI の会社が受け取るのは写真と当方の指示文だけで、端末ID は送りません</li>
 <li><strong>保存</strong>: 当方のサーバーは写真を保存しません。Anthropic・OpenAI は、API で受け取ったデータを、初期設定ではモデルの学習に使わず、30日以内に削除すると定めています（規約違反の疑いがある場合は、より長く保存されることがあります）。詳しくは <a href="https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data">Anthropic のデータの保存期間</a>・<a href="https://developers.openai.com/api/docs/guides/your-data">OpenAI の API のデータの扱い</a>をご覧ください</li>
 <li><strong>結果</strong>: AI が出した魚種名の候補をアプリに返して表示します。AI の結果は間違うことがあります</li>
 </ul>
@@ -62,7 +62,7 @@
 <ul>
 <li><strong>送るとき</strong>: 「情報」の「釣り方・場所」の欄で、「英語にする」「日本語にする」を押したときだけ送ります</li>
 <li><strong>送るもの</strong>: その欄に入力した文（60字まで）と、訳す言語だけです。写真・撮影場所は送りません</li>
-<li><strong>送り先</strong>: 当方のサーバー（Supabase・東京リージョン）を通して、<strong>Anthropic, PBC（米国）</strong>に送り、訳します。AI の会社が受け取るのは文と当方の指示文だけで、端末ID は送りません</li>
+<li><strong>送り先</strong>: 当方のサーバー（Supabase Pte. Ltd.・東京リージョン）を通して、<strong>Anthropic, PBC（米国）</strong>に送り、訳します。AI の会社が受け取るのは文と当方の指示文だけで、端末ID は送りません</li>
 <li><strong>保存</strong>: 当方のサーバーは、文も訳も保存しません。Anthropic の扱いは、魚種の判定と同じです（初期設定ではモデルの学習に使わず、30日以内に削除）</li>
 <li><strong>結果</strong>: 訳した文は欄に入るだけで、あなたが直したり、元の文に戻したりできます。AI の訳は間違うことがあります</li>
 </ul>
@@ -99,8 +99,16 @@
 </ul>
 <p>Android では、購入と広告のライブラリが、動くために必要な権限も加えます（課金・通信の状態の確認・短い間の端末のスリープの防止・短い裏側の処理）。</p>
 <p>端末の位置情報（現在地）・連絡先・マイクなど、ほかの権限は使いません。</p>
-<h2 id="section-7">7. 第三者への提供</h2>
-<p>当方は、あなたの情報を販売しません。本ポリシーに書いたサービスの事業者（Supabase・Anthropic・OpenAI・Apple・Google、メールの転送の Cloudflare）に、書いた機能の提供のためにだけ渡します。ただし、Android の ML Kit が Google に送る使い方の統計（第1条）は、Google が ML Kit の不具合の調査と使い方の分析に使います。法令にもとづく開示を求められた場合は、これに応じることがあります。</p>
+<h2 id="section-7">7. 第三者への提供と処理の委託</h2>
+<p>当方は、あなたの情報を販売せず、第三者に提供しません。ただし、Android の ML Kit が Google に送る使い方の統計（第1条）は、Google が ML Kit の不具合の調査と使い方の分析に使います。また、法令にもとづく開示を求められた場合は、これに応じることがあります。</p>
+<p>本ポリシーに書いた機能の提供のためにだけ、次の事業者に処理を委託します。</p>
+<ul>
+<li><strong>Supabase Pte. Ltd.</strong>: 当方のサーバーとデータベースの運営（東京リージョン）</li>
+<li><strong>Anthropic, PBC</strong>: AI の魚種の判定と自由記入の翻訳</li>
+<li><strong>OpenAI OpCo, LLC</strong>: AI の魚種の判定（Anthropic が混雑・失敗したときだけ）</li>
+<li><strong>Apple Inc.・Google LLC</strong>: 購入の確認（App Store・Google Play）</li>
+<li><strong>Cloudflare, Inc.・Google LLC（Gmail）</strong>: お問い合わせのメールの転送と保管</li>
+</ul>
 <h2 id="section-8">8. お子さまについて</h2>
 <p>本アプリは13歳未満のお子さまを対象としていません。13歳未満のお子さまの情報を、それと知りながら集めることはありません。</p>
 <h2 id="section-9">9. 選べること・データの削除</h2>
@@ -108,10 +116,10 @@
 <li>AI の判定を使わずに本アプリを使えます（「今はしない」を選び、魚種名を自分で入力できます）</li>
 <li>地図（撮影場所から地域を割り出す）・顔を隠す・自由記入の翻訳は、使わなくても本アプリを使えます。地図と顔を隠すは、初めはオフです</li>
 <li>本アプリを削除すると、端末の中のものはすべて消えます（iOS では、端末ID はキーチェーンに残ります）</li>
-<li><strong>当方のサーバーのデータの削除</strong>: 設定に表示される「サポート用の ID」を添えて、<a href="mailto:info@fishtype.app">info@fishtype.app</a> までご連絡ください（設定の「お問い合わせ」から送ると、ID がメールに入ります）。ご連絡から14日以内に、その端末ID のデータを削除します。削除すると、当方のサーバーの無料の判定の枚数と購入の状態も消えます。Fishtype Pro をお使いの場合は、アプリで「購入を復元」してください</li>
+<li><strong>当方のサーバーのデータの削除</strong>: 設定に表示される「サポート用の ID」を添えて、<a href="mailto:info@fishtype.app">info@fishtype.app</a> までご連絡ください（設定の「お問い合わせ」から送ると、ID がメールに入ります）。ご連絡から10日以内に、その端末ID のデータを削除します。削除すると、当方のサーバーの無料の判定の枚数と購入の状態も消えます。Fishtype Pro をお使いの場合は、アプリで「購入を復元」してください</li>
 </ul>
 <h2 id="section-10">10. お問い合わせいただいたとき</h2>
-<p>メールでお問い合わせいただいた場合（設定の「お問い合わせ」からを含みます）、メールアドレス・本文と、添えていただいたもの（アプリがメールに入れるサポート用の ID・アプリの版・OS など）を受け取ります。<a href="mailto:info@fishtype.app">info@fishtype.app</a> へのメールは、Cloudflare と Google（Gmail）を通して当方に転送されます。返信とご依頼への対応にだけ使い、それに必要な間だけ保存します。</p>
+<p>メールでお問い合わせいただいた場合（設定の「お問い合わせ」からを含みます）、メールアドレス・本文と、添えていただいたもの（アプリがメールに入れるサポート用の ID・アプリの版・OS など）を受け取ります。<a href="mailto:info@fishtype.app">info@fishtype.app</a> へのメールは、Cloudflare と Google（Gmail）を通して当方に転送されます。返信とご依頼への対応にだけ使い、対応が終わってから1年で削除します。</p>
 <h2 id="section-11">11. ポリシーの改定</h2>
 <p>本ポリシーを改定する場合は、本ページで公表します。重要な変更がある場合は、アプリの中でもお知らせします。</p>
 <h2 id="section-12">12. お問い合わせ先</h2>
@@ -119,6 +127,7 @@
 <li>事業者：MTP Works</li>
 <li>メール：<a href="mailto:info@fishtype.app">info@fishtype.app</a></li>
 <li>English: <a href="https://fishtype.app/privacy/">Privacy Policy (English)</a></li>
+<li>한국어: <a href="https://fishtype.app/ko/privacy/">개인정보 처리방침</a></li>
 </ul>
 </main>
 <footer>

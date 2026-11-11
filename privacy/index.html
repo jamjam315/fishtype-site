@@ -31,7 +31,7 @@
 <main>
 <a class="home" href="/">Fishtype</a>
 <h1>Fishtype Privacy Policy</h1>
-<p class="meta">Effective: October 16, 2026 · Last updated: November 7, 2026</p>
+<p class="meta">Effective: October 16, 2026 · Last updated: November 11, 2026</p>
 <p>Fishtype ("the app") is provided by MTP Works ("we", "us"). Fishtype turns a photo of your catch into a card with the fish name set in type. We collect as little as we can: there are no accounts, we run no analytics, and Fishtype never uses your device's current location.</p>
 <h2 id="section-1">1. What stays on your device</h2>
 <p>The following are kept only on your device and are never sent to us or anyone else:</p>
@@ -54,7 +54,7 @@
 <ul>
 <li><strong>When:</strong> only after you agree in the app, and only for the photo you are working on. If you choose "Not now", nothing is sent</li>
 <li><strong>What is sent:</strong> a copy of your photo, redrawn as a JPEG of up to 1024 pixels on the long side. The app redraws the photo, so the copy carries no metadata (no date, place or camera data), and our server also rejects photos that still carry camera (Exif) data. People's faces in the photo are always blurred before it is sent, whatever the Hide faces setting. If your device region is Japan, a hint that the fish was caught in Japan is added. The photo's location and your device's location are never sent</li>
-<li><strong>Where it goes:</strong> to our server (Supabase, Tokyo region), which forwards the photo to <strong>Anthropic, PBC (USA)</strong> for identification. Only if Anthropic is busy or fails do we send it to <strong>OpenAI, L.L.C. (USA)</strong> instead. The AI companies receive the photo and our instructions only, not your device ID</li>
+<li><strong>Where it goes:</strong> to our server (Supabase Pte. Ltd., Tokyo region), which forwards the photo to <strong>Anthropic, PBC (USA)</strong> for identification. Only if Anthropic is busy or fails do we send it to <strong>OpenAI OpCo, LLC (USA)</strong> instead. The AI companies receive the photo and our instructions only, not your device ID</li>
 <li><strong>Storage:</strong> our server does not store your photo. Anthropic and OpenAI do not use API data to train their models by default, and delete it within 30 days (they may keep it longer if it is flagged for a policy violation). See <a href="https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data">Anthropic's data retention</a> and <a href="https://developers.openai.com/api/docs/guides/your-data">OpenAI's API data controls</a></li>
 <li><strong>Results:</strong> the AI's suggested fish names are returned to the app and shown to you. AI results can be wrong</li>
 </ul>
@@ -62,7 +62,7 @@
 <ul>
 <li><strong>When:</strong> only when you tap "To English" or "To Japanese" under the "Method or spot" field in Info</li>
 <li><strong>What is sent:</strong> only the text in that field (up to 60 characters) and the language to translate into. No photo and no location</li>
-<li><strong>Where it goes:</strong> to our server (Supabase, Tokyo region), which forwards it to <strong>Anthropic, PBC (USA)</strong> for translation. The AI company receives the text and our instructions only, not your device ID</li>
+<li><strong>Where it goes:</strong> to our server (Supabase Pte. Ltd., Tokyo region), which forwards it to <strong>Anthropic, PBC (USA)</strong> for translation. The AI company receives the text and our instructions only, not your device ID</li>
 <li><strong>Storage:</strong> our server stores neither the text nor the translation. Anthropic handles it as for fish identification (not used to train models by default, and deleted within 30 days)</li>
 <li><strong>Results:</strong> the translation is only put into the field, where you can edit it or go back to your original text. AI translations can be wrong</li>
 </ul>
@@ -99,8 +99,16 @@
 </ul>
 <p>On Android, the libraries for purchases and ads also add the permissions they need to work: billing, network state, keeping the device awake briefly, and running a short background task.</p>
 <p>Fishtype does not use your device's location (current location), contacts, the microphone or any other permission.</p>
-<h2 id="section-7">7. Sharing with others</h2>
-<p>We do not sell your data. We share it only with the service providers named in this policy (Supabase, Anthropic, OpenAI, Apple, Google, and Cloudflare for email forwarding), and only to provide the features described. The exception is the ML Kit usage information on Android (section 1), which Google uses to diagnose ML Kit and analyze its usage. We may disclose information if required by law.</p>
+<h2 id="section-7">7. Sharing and service providers</h2>
+<p>We do not sell your data, and we do not provide it to third parties, with two exceptions: the ML Kit usage information on Android (section 1), which Google uses to diagnose ML Kit and analyze its usage, and disclosure when required by law.</p>
+<p>We entrust the following service providers with processing, only to provide the features described in this policy:</p>
+<ul>
+<li><strong>Supabase Pte. Ltd.:</strong> running our server and database (Tokyo region)</li>
+<li><strong>Anthropic, PBC:</strong> AI fish identification and note translation</li>
+<li><strong>OpenAI OpCo, LLC:</strong> AI fish identification, only when Anthropic is busy or fails</li>
+<li><strong>Apple Inc. and Google LLC:</strong> checking purchases (App Store and Google Play)</li>
+<li><strong>Cloudflare, Inc. and Google LLC (Gmail):</strong> forwarding and storing the email you send us</li>
+</ul>
 <h2 id="section-8">8. Children</h2>
 <p>Fishtype is not directed at children under 13, and we do not knowingly collect information from them.</p>
 <h2 id="section-9">9. Your choices and deleting your data</h2>
@@ -108,10 +116,10 @@
 <li>You can use Fishtype without AI identification (choose "Not now" and type the fish name yourself)</li>
 <li>You can use Fishtype without the map (the rough area from the photo's location), Hide faces or note translation. The map and Hide faces are off by default</li>
 <li>You can delete everything on your device by deleting the app (on iOS, the device ID stays in the keychain)</li>
-<li><strong>To delete the data on our server</strong>, email us at <a href="mailto:info@fishtype.app">info@fishtype.app</a> with the Support ID shown in Settings (Settings &gt; Contact adds it to the email for you). We will delete the data linked to that device ID within 14 days. Deleting it also resets your free identification count and purchase status on our server; restore your purchase in the app to use Fishtype Pro again</li>
+<li><strong>To delete the data on our server</strong>, email us at <a href="mailto:info@fishtype.app">info@fishtype.app</a> with the Support ID shown in Settings (Settings &gt; Contact adds it to the email for you). We will delete the data linked to that device ID within 10 days. Deleting it also resets your free identification count and purchase status on our server; restore your purchase in the app to use Fishtype Pro again</li>
 </ul>
 <h2 id="section-10">10. When you contact us</h2>
-<p>If you email us (including from Settings &gt; Contact), we receive your email address, your message and anything you include, such as the Support ID, app version and OS that the app adds to the email. Email to <a href="mailto:info@fishtype.app">info@fishtype.app</a> is forwarded to our mailbox through Cloudflare and Google (Gmail). We use it only to answer you and handle your request, and keep it only as long as needed for that.</p>
+<p>If you email us (including from Settings &gt; Contact), we receive your email address, your message and anything you include, such as the Support ID, app version and OS that the app adds to the email. Email to <a href="mailto:info@fishtype.app">info@fishtype.app</a> is forwarded to our mailbox through Cloudflare and Google (Gmail). We use it only to answer you and handle your request, and delete it one year after we finish handling it.</p>
 <h2 id="section-11">11. Changes</h2>
 <p>We will post any changes to this policy on this page. If a change is significant, we will also let you know in the app.</p>
 <h2 id="section-12">12. Contact</h2>
@@ -119,6 +127,7 @@
 <li>Operator: MTP Works</li>
 <li>Email: <a href="mailto:info@fishtype.app">info@fishtype.app</a></li>
 <li>Japanese version: <a href="https://fishtype.app/ja/privacy/">プライバシーポリシー（日本語）</a></li>
+<li>Korean version: <a href="https://fishtype.app/ko/privacy/">개인정보 처리방침（한국어）</a></li>
 </ul>
 </main>
 <footer>
