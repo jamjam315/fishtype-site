@@ -31,7 +31,7 @@
 <main>
 <a class="home" href="/">Fishtype</a>
 <h1>Fishtype Privacy Policy</h1>
-<p class="meta">Effective: October 16, 2026 · Last updated: November 11, 2026</p>
+<p class="meta">Effective: October 16, 2026 · Last updated: November 16, 2026</p>
 <p>Fishtype ("the app") is provided by MTP Works ("we", "us"). Fishtype turns a photo of your catch into a card with the fish name set in type. We collect as little as we can: there are no accounts, we run no analytics, and Fishtype never uses your device's current location.</p>
 <h2 id="section-1">1. What stays on your device</h2>
 <p>The following are kept only on your device and are never sent to us or anyone else:</p>
@@ -82,22 +82,22 @@
 <p>Payments are handled by Apple (App Store) or Google (Google Play). We never receive your card or payment details. To confirm a purchase, the app sends the store's transaction information to our server, which checks it with Apple's or Google's servers and keeps the purchase status described in section 3.</p>
 <p>When a purchase is refunded, revoked, renewed or expires, Apple or Google notifies our server. Our server then checks the purchase with Apple or Google again and updates the purchase status in section 3 (a refunded or revoked purchase stops Fishtype Pro right away). The app may also ask our server whether Fishtype Pro is active on your device; it sends only the device ID for this.</p>
 <h2 id="section-5">5. Ads (Google AdMob)</h2>
-<p><strong>Fishtype currently shows no ads.</strong> The ad component (the Google AdMob SDK) is included in the app but is not started, and the app does not ask for tracking permission. Before we start showing ads, we will update this policy. The rest of this section describes how ads work when they are shown.</p>
+<p>The iOS and Android apps (version 1.1 or later) may show ads to free users. Earlier versions do not show ads. Ads may start at different times on iOS and Android.</p>
 <ul>
-<li>Free users can choose to watch a short video ad to get one more identification. Ads appear only when you tap "Watch an ad for 1 more photo". There are no banner or interstitial ads, and no ads while you have Fishtype Pro</li>
-<li>Ads are provided by <strong>Google AdMob (Google LLC)</strong>. The AdMob SDK collects information such as an advertising identifier, device information, IP address and ad interactions for ad delivery, measurement and fraud prevention. See <a href="https://policies.google.com/technologies/partner-sites">how Google uses information from apps that use its services</a></li>
-<li><strong>Advertising identifier:</strong> the current iOS version of the app does not ask whether you allow tracking, so the advertising identifier (IDFA) is not used and ads are not personalized based on tracking (we will update this policy before releasing a version that asks). On Android, the advertising ID is used; you can reset it or opt out of personalized ads in your device settings</li>
-<li><strong>Europe, UK and Switzerland:</strong> Google's consent form is shown first. You can change your choice at any time in Settings &gt; Ad privacy choices</li>
+<li>Free users can choose to watch a short video ad to get one more identification. An ad is loaded and shown only when you tap "Watch an ad for 1 more photo". There are no banner or interstitial ads, and no ads while you have Fishtype Pro</li>
+<li>Ads are provided by <strong>Google AdMob (Google LLC, USA)</strong>. During the period when we have ads turned on, when a free user opens the app (version 1.1 or later), the app starts the AdMob SDK and Google's consent tool. They send Google information such as device information (model, OS version and so on), identifiers (on iPhone, not the IDFA; on Android, including the Android advertising ID), your IP address (from which a rough location can be estimated) and ad interactions, which Google uses to deliver ads, limit how often the same ad is shown, report on ads in aggregate and prevent fraud. See <a href="https://policies.google.com/technologies/partner-sites">how Google uses information from apps that use its services</a></li>
+<li><strong>Non-personalized ads only:</strong> We ask Google for non-personalized ads only, so ads are not chosen based on your interests or your activity in other apps and websites. They can be chosen based on general information such as the app and your rough location. On iPhone, Fishtype does not ask for tracking permission and does not use the advertising identifier (IDFA). In the Android app (version 1.1 or later), during the period when we have ads turned on, the Android advertising ID is sent to Google (you can reset or delete it in your device settings)</li>
+<li><strong>Europe, UK and Switzerland:</strong> Google's consent form is shown before ads. You can change your choice at any time in Settings &gt; Ad privacy choices</li>
 <li><strong>Reward confirmation:</strong> to make sure the reward is real, the app gives AdMob your device ID and a one-time code for each ad. AdMob sends them back to our server when you finish the ad. Advertisers do not receive them</li>
 </ul>
 <h2 id="section-6">6. Permissions</h2>
 <ul>
 <li><strong>Camera:</strong> to take a photo of your catch</li>
 <li><strong>Photos:</strong> to open the photo you choose (and, when the map is on, to work out a rough area from that photo's location, as in section 1), and to save your finished image (on Android 10 and earlier, a storage permission is used for saving)</li>
-<li><strong>Tracking (iOS):</strong> not asked in the current version (section 5)</li>
+<li><strong>Tracking (iOS):</strong> never asked; on iPhone, Fishtype does not track you (section 5)</li>
 <li><strong>Internet:</strong> for fish identification, note translation, purchase checks and ads</li>
 </ul>
-<p>On Android, the libraries for purchases and ads also add the permissions they need to work: billing, network state, keeping the device awake briefly, and running a short background task.</p>
+<p>On Android, the libraries for purchases and ads also add the permissions they need to work: billing, network state, keeping the device awake briefly, and running a short background task (from version 1.1, also using the advertising ID and Android's advertising features (Privacy Sandbox)).</p>
 <p>Fishtype does not use your device's location (current location), contacts, the microphone or any other permission.</p>
 <h2 id="section-7">7. Sharing and service providers</h2>
 <p>We do not sell your data, and we do not provide it to third parties, with two exceptions: the ML Kit usage information on Android (section 1), which Google uses to diagnose ML Kit and analyze its usage, and disclosure when required by law.</p>
@@ -107,6 +107,7 @@
 <li><strong>Anthropic, PBC:</strong> AI fish identification and note translation</li>
 <li><strong>OpenAI OpCo, LLC:</strong> AI fish identification, only when Anthropic is busy or fails</li>
 <li><strong>Apple Inc. and Google LLC:</strong> checking purchases (App Store and Google Play)</li>
+<li><strong>Google LLC (AdMob):</strong> showing ads in the free version of the iOS and Android apps (version 1.1 or later) and confirming rewards (section 5)</li>
 <li><strong>Cloudflare, Inc. and Google LLC (Gmail):</strong> forwarding and storing the email you send us</li>
 </ul>
 <h2 id="section-8">8. Children</h2>
@@ -115,6 +116,7 @@
 <ul>
 <li>You can use Fishtype without AI identification (choose "Not now" and type the fish name yourself)</li>
 <li>You can use Fishtype without the map (the rough area from the photo's location), Hide faces or note translation. The map and Hide faces are off by default</li>
+<li>You never have to watch an ad: ads appear only when you choose to watch one. While you have Fishtype Pro, the app does not start the AdMob SDK</li>
 <li>You can delete everything on your device by deleting the app (on iOS, the device ID stays in the keychain)</li>
 <li><strong>To delete the data on our server</strong>, email us at <a href="mailto:info@fishtype.app">info@fishtype.app</a> with the Support ID shown in Settings (Settings &gt; Contact adds it to the email for you). We will delete the data linked to that device ID within 10 days. Deleting it also resets your free identification count and purchase status on our server; restore your purchase in the app to use Fishtype Pro again</li>
 </ul>
